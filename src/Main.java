@@ -17,7 +17,7 @@ public class Main {
         int opcao = -1;
 
         while (opcao != 0) {
-            System.out.println("\n=== GESTÃO DE TRÁFEGO AÉREO ===");
+            System.out.println("\nGESTÃO DE TRÁFEGO AÉREO:");
             System.out.println("1 - Cadastrar voo programado");
             System.out.println("2 - Consultar voo programado");
             System.out.println("3 - Cancelar voo programado");
@@ -76,7 +76,7 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.println("\n--- Relatório de Voos Programados ---");
+                        System.out.println("\nRelatório de Voos Programados");
                         arvoreVoos.percursos();
                         break;
 
@@ -108,7 +108,7 @@ public class Main {
                         break;
 
                     case 7:
-                        System.out.println("\n--- Aeronaves na Pista de Decolagem ---");
+                        System.out.println("\nAeronaves na Pista de Decolagem");
                         pista.listar();
                         break;
 
@@ -124,7 +124,7 @@ public class Main {
                         break;
 
                     case 9:
-                        System.out.println("\n--- Histórico de Auditoria ---");
+                        System.out.println("\n-Histórico de Auditoria:");
                         auditoria.listar();
                         break;
 
