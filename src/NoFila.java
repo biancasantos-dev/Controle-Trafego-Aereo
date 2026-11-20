@@ -11,10 +11,6 @@ public class NoFila {
         return elemento;
     }
 
-    public void setElemento(Voo elemento) {
-        this.elemento = elemento;
-    }
-
     public NoFila getProximo() {
         return proximo;
     }

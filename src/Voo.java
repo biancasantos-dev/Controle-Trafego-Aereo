@@ -11,16 +11,8 @@ public class Voo {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public String getDestino() {
         return destino;
-    }
-
-    public void setDestino(String destino) {
-        this.destino = destino;
     }
 
     @Override

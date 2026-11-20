@@ -7,10 +7,6 @@ public class Fila {
         this.fim = null;
     }
 
-    public void inserir(Voo voo) {
-        adicionar(voo);
-    }
-
     public void adicionar(Voo voo) {
         NoFila novo = new NoFila(voo);
         if (this.inicio == null) {
@@ -20,10 +16,6 @@ public class Fila {
             this.fim.setProximo(novo);
             this.fim = novo;
         }
-    }
-
-    public Voo excluir() {
-        return remover();
     }
 
     public Voo remover() {
@@ -36,10 +28,6 @@ public class Fila {
             this.fim = null;
         }
         return atendido;
-    }
-
-    public Voo buscar(int codigo) {
-        return localizar(codigo);
     }
 
     public Voo localizar(int codigo) {
@@ -55,7 +43,7 @@ public class Fila {
 
     public void listar() {
         if (this.inicio == null) {
-            System.out.println("Fila vazia.");
+            System.out.println("Nenhuma aeronave aguardando na pista.");
             return;
         }
         NoFila atual = this.inicio;

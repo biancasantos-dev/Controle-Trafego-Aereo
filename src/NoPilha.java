@@ -11,10 +11,6 @@ public class NoPilha {
         return elemento;
     }
 
-    public void setElemento(EventoLog elemento) {
-        this.elemento = elemento;
-    }
-
     public NoPilha getProximo() {
         return proximo;
     }

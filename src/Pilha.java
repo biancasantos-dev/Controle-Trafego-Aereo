@@ -5,18 +5,10 @@ public class Pilha {
         this.topo = null;
     }
 
-    public void inserir(EventoLog evento) {
-        adicionar(evento);
-    }
-
     public void adicionar(EventoLog evento) {
         NoPilha novo = new NoPilha(evento);
         novo.setProximo(this.topo);
         this.topo = novo;
-    }
-
-    public EventoLog excluir() {
-        return remover();
     }
 
     public EventoLog remover() {
@@ -28,14 +20,13 @@ public class Pilha {
         return removido;
     }
 
-    public EventoLog buscar(String trecho) {
-        return localizar(trecho);
-    }
-
     public EventoLog localizar(String trecho) {
+        if (trecho == null) {
+            return null;
+        }
         NoPilha atual = this.topo;
         while (atual != null) {
-            if (atual.getElemento().getMensagem().contains(trecho)) {
+            if (atual.getElemento().getMensagem().toLowerCase().contains(trecho.toLowerCase())) {
                 return atual.getElemento();
             }
             atual = atual.getProximo();
@@ -45,7 +36,7 @@ public class Pilha {
 
     public void listar() {
         if (this.topo == null) {
-            System.out.println("Pilha vazia.");
+            System.out.println("Histórico de auditoria vazio.");
             return;
         }
         NoPilha atual = this.topo;

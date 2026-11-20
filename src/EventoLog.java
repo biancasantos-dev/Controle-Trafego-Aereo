@@ -9,10 +9,6 @@ public class EventoLog {
         return mensagem;
     }
 
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
-
     @Override
     public String toString() {
         return "Log: " + mensagem;

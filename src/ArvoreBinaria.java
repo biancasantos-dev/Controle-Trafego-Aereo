@@ -30,10 +30,6 @@ public class ArvoreBinaria {
         }
     }
 
-    public Voo buscar(int codigo) {
-        return localizar(codigo);
-    }
-
     public Voo localizar(int codigo) {
         NoArvore atual = this.raiz;
         while (atual != null) {
@@ -46,10 +42,6 @@ public class ArvoreBinaria {
             }
         }
         return null;
-    }
-
-    public boolean excluir(int codigo) {
-        return remover(codigo);
     }
 
     public boolean remover(int codigo) {
@@ -116,28 +108,33 @@ public class ArvoreBinaria {
     }
 
     public void percursos() {
-        System.out.println("Pré-ordem:");
-        preOrdem(this.raiz);
-        System.out.println("\nIn-ordem:");
+        if (this.raiz == null) {
+            System.out.println("Nenhum voo cadastrado.");
+            return;
+        }
+
+        System.out.println("In-Ordem (código crescente):");
         inOrdem(this.raiz);
-        System.out.println("\nPós-ordem:");
+        System.out.println("\n\nPré-Ordem:");
+        preOrdem(this.raiz);
+        System.out.println("\n\nPós-Ordem:");
         posOrdem(this.raiz);
         System.out.println();
-    }
-
-    public void preOrdem(NoArvore no) {
-        if (no != null) {
-            System.out.print(no.getConteudo() + " ");
-            preOrdem(no.getEsq());
-            preOrdem(no.getDir());
-        }
     }
 
     public void inOrdem(NoArvore no) {
         if (no != null) {
             inOrdem(no.getEsq());
-            System.out.print(no.getConteudo() + " ");
+            System.out.print(no.getConteudo() + "  ");
             inOrdem(no.getDir());
+        }
+    }
+
+    public void preOrdem(NoArvore no) {
+        if (no != null) {
+            System.out.print(no.getConteudo() + "  ");
+            preOrdem(no.getEsq());
+            preOrdem(no.getDir());
         }
     }
 
@@ -145,7 +142,7 @@ public class ArvoreBinaria {
         if (no != null) {
             posOrdem(no.getEsq());
             posOrdem(no.getDir());
-            System.out.print(no.getConteudo() + " ");
+            System.out.print(no.getConteudo() + "  ");
         }
     }
 }
